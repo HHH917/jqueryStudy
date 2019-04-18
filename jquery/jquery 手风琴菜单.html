@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 手风琴</title>
+    <style type="text/less">
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .menu{
+            width: 150px;
+            height: auto;
+            margin: 100px auto;
+            ul{
+                list-style: none;
+                text-align: center;
+                li{
+                    span{
+                        display: block;
+                        border-radius: 10px 10px;
+                        background: cyan;
+                        height:20px;
+                        line-height:20px;
+                        font-size: 16px;
+                        border-bottom:1px solid #ccc;
+                        cursor:pointer;
+                    }
+                    div{
+                        margin: 0 5px;
+                        height: 50px;
+                        background: aquamarine;
+                        border-radius: 5px;
+                        display: none;
+                    }
+                    .deBlock{
+                        display: block;
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+
+    <ul>
+        <li >
+            <span>菜单一</span>
+            <div class="deBlock">内容显示区</div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <span>菜单二</span>
+            <div>内容显示区</div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <span>菜单三</span>
+            <div>内容显示区</div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <span>菜单四</span>
+            <div>内容显示区</div>
+        </li>
+    </ul>
+
+</div>
+<script src="js/less.min.js"></script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+   $(function () {
+       $("span").click(function () {
+           $(this).siblings().slideDown();
+           $(this).parents("ul").siblings().children("li").children("div").slideUp();
+       });
+   });
+</script>
+</body>
+</html>

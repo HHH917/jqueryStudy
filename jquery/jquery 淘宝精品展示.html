@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery淘宝精品</title>
+    <style type="text/less">
+        *{
+            margin: 0;
+            padding:0;
+            font-size: 12px;
+        }
+        .leftRight(){
+            display: block;
+            width: 48px;
+            height: 27px;
+            border-bottom: 1px solid pink;
+            line-height: 27px;
+            text-align: center;
+            color: black;
+        }
+
+        ul{
+            list-style: none;
+            float: left;
+            a{
+                text-decoration: none;
+            }
+        }
+        .boutiqueWindow{
+            width: 298px;
+            height: 248px;
+            margin: 100px auto 0;
+            border: 1px solid pink;
+            overflow: hidden;
+            #left,#right{
+                li {
+                    background: url(img/taobaoImg/lili.jpg) repeat-x;
+                    a{
+                        .leftRight();
+                        &:hover{
+                            background-image: url(img/taobaoImg/abg.gif);
+                        }
+                    }
+
+                }
+            }
+            #center{
+                border-left: 1px solid pink;
+                border-right: 1px solid pink;
+            }
+        }
+
+    </style>
+</head>
+<body>
+ <div class="boutiqueWindow">
+     <ul id="left">
+         <li><a href="#">女靴</a></li>
+         <li><a href="#">雪地靴</a></li>
+         <li><a href="#">冬裙</a></li>
+         <li><a href="#">呢大衣</a></li>
+         <li><a href="#">毛衣</a></li>
+         <li><a href="#">棉服</a></li>
+         <li><a href="#">女裤</a></li>
+         <li><a href="#">羽绒服</a></li>
+         <li><a href="#">牛仔裤</a></li>
+     </ul>
+     <ul id="center">
+         <li><a href="#"><img src="img/taobaoImg/女靴.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/雪地靴.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/冬裙.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/呢大衣.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/毛衣.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/棉服.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/女裤.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/羽绒服.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/牛仔裤.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/女包.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/男靴.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/登山鞋.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/皮带.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/围巾.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/皮衣.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/男毛衣.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/男棉服.jpg" width="200" height="250"/></a></li>
+         <li><a href="#"><img src="img/taobaoImg/男包.jpg" width="200" height="250"/></a></li>
+     </ul>
+     <ul id="right">
+         <li><a href="#">女包</a></li>
+         <li><a href="#">男靴</a></li>
+         <li><a href="#">登山鞋</a></li>
+         <li><a href="#">皮带</a></li>
+         <li><a href="#">围巾</a></li>
+         <li><a href="#">皮衣</a></li>
+         <li><a href="#">男毛衣</a></li>
+         <li><a href="#">男棉服</a></li>
+         <li><a href="#">男包</a></li>
+     </ul>
+ </div>
+
+<script src="js/less.min.js"></script>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        //eq(N)获取第N个元素
+        //index() 获取当前元素下标
+        $("#left >li").mouseenter(function () {
+            $("#center>li").eq($(this).index()).show().siblings().hide();
+        });
+        $("#right >li").mouseenter(function () {
+            $("#center>li").eq($(this).index()+9).show().siblings().hide();
+        });
+    })
+</script>
+  
+</body>
+</html>

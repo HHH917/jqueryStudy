@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery</title>
+    <style>
+        .test{
+            width: auto;
+            height: 100px;
+            margin-bottom: 10px;
+            background: red;
+            display: none;
+
+        }
+    </style>
+
+</head>
+<body>
+<input type="button" value="添加样式" class="changeOne">
+<input type="button" value="添加内容"class="changeTwo">
+    <div class="test">
+        <p class="ps">我是div中的p标签</p>
+        <p>我是div中的p标签</p>
+    </div>
+    <div class="test"></div>
+    <div class="test"></div>
+
+
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+     $(document).ready(function () {
+         let n = true;
+         $(".changeOne").click(function () {
+             if (n) {
+             $("div").show(1000);
+                 n = false;
+             }else{
+                 $("div").hide(1000);
+                 n = true;
+             }
+         
+         });
+         $("div  .ps").css("color","green");
+
+
+   });
+</script>
+</body>
+</html>

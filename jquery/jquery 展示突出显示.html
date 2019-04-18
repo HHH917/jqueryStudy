@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 展示突出显示</title>
+    <style type="text/less">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .show{
+            width: 600px;
+            height: 600px;
+            margin: 300px auto;
+            border-radius: 300px 300px;
+            background: cyan;
+            position: relative;
+            overflow: hidden;
+            .rImg{
+                float: left;
+                padding: 50px 50px;
+                position: absolute;
+                transform-origin: 300px 300px;
+
+               // transform: rotate(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="show">
+            <a href="#" class="rImg"><img src="img/01.jpg" alt=""></a>
+            <a href="#" class="rImg"><img src="img/02.jpg" alt=""></a>
+            <a href="#" class="rImg"><img src="img/03.jpg" alt=""></a>
+            <a href="#" class="rImg"><img src="img/04.jpg" alt=""></a>
+            <a href="#" class="rImg"><img src="img/05.jpg" alt=""></a>
+            <a href="#" class="rImg"><img src="img/06.jpg" alt=""></a>
+
+        </div>
+    </header>
+
+    <script src="js/less.min.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        let deg =0;
+        $(function () {
+            $(".rImg").each(function (){
+                deg = 60+deg;
+                $(this).css("transform","rotate("+deg+"deg)");
+            });
+            $(".rImg").mouseenter(function () {
+                $(this).css("opacity","0.5").siblings().css("opacity","1");
+            })
+            $(".rImg").mouseleave(function () {
+                $(this).css("opacity","1");
+            })
+        });
+
+    </script>
+</body>
+</html>

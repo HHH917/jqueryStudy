@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/less">
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .menu{
+            width: 330px;
+            height: 30px;
+            border-radius: 15px;
+            padding-left: 10px;
+            margin: 100px auto 0px;
+            background: olivedrab;
+            ul{
+                list-style: none;
+                li{
+                    float: left;
+                    margin-right: 10px;
+                    border-radius: 30px 15px;
+                    position: relative;
+                    background: aqua;
+                    ul{
+                        position: absolute;
+                        top: 30px;
+                        display: none;
+                    }
+                }
+            }
+
+            a{
+                display: block;
+                height: 30px;
+                width: 100px;
+                text-decoration: none;
+                color: #000;
+                line-height: 30px;
+                text-align: center;
+                &:hover{
+                    color: red;
+                }
+            }
+        }
+
+    </style>
+</head>
+<body>
+  <div class="menu">
+      <ul>
+          <li>
+              <a href="javascript:void(0);">一级菜单1</a>
+              <ul class="ul">
+                  <li><a href="javascript:void(0);">二级菜单1</a></li>
+                  <li><a href="javascript:void(0);">二级菜单2</a></li>
+                  <li><a href="javascript:void(0);">二级菜单3</a></li>
+              </ul>
+          </li>
+          <li>
+              <a href="javascript:void(0);">一级菜单2</a>
+              <ul class="ul">
+                  <li><a href="javascript:void(0);">二级菜单1</a></li>
+                  <li><a href="javascript:void(0);">二级菜单2</a></li>
+                  <li><a href="javascript:void(0);">二级菜单3</a></li>
+              </ul>
+          </li>
+          <li>
+              <a href="javascript:void(0);">一级菜单3</a>
+              <ul class="ul">
+                  <li><a href="javascript:void(0);">二级菜单1</a></li>
+                  <li><a href="javascript:void(0);">二级菜单2</a></li>
+                  <li><a href="javascript:void(0);">二级菜单3</a></li>
+              </ul>
+          </li>
+
+
+      </ul>
+  </div>
+  <script src="js/less.min.js"></script>
+  <script>
+      $(function () {
+
+          $(".menu > ul > li").mouseenter(function () {
+              console.log("sdfas");
+              $(this).children("ul").show(500);
+          });
+
+      })
+  </script>
+  <script src="js/jquery-1.12.4.js"></script>
+</body>
+</html>
